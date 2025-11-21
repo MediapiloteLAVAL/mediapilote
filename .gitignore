@@ -1,0 +1,16 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.swp
+
+# Node modules (si vous utilisez npm)
+node_modules/
+
+# Configuration locale (ne pas commiter)
+wp-config-local.php

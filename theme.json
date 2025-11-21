@@ -1,0 +1,19 @@
+{
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "name": "Bleu canard",
+                    "slug": "primary",
+                    "color": "#29a0b5"
+                }
+            ],
+            "custom": true
+        },
+        "layout": {
+            "contentSize": "1920px",
+            "wideSize": "1100px"
+        }
+    },
+    "version": 2
+}

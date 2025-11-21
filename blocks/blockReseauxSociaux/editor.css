@@ -1,0 +1,36 @@
+/* Styles spécifiques à l'éditeur Gutenberg pour le bloc Réseaux Sociaux */
+
+.wp-block-mediapilote-reseaux-sociaux.reseaux-sociaux-section {
+    border: 2px dashed #ddd;
+    position: relative;
+}
+
+.wp-block-mediapilote-reseaux-sociaux.reseaux-sociaux-section::before {
+    content: "Bloc Réseaux Sociaux";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Style pour la prévisualisation dans l'éditeur */
+.reseaux-sociaux-preview {
+    min-height: 60px;
+}
+
+/* Améliorer la visibilité dans l'éditeur */
+.wp-block-mediapilote-reseaux-sociaux .components-base-control__label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Style pour les contrôles dans la sidebar */
+.components-panel__body .components-base-control:not(:last-child) {
+    margin-bottom: 20px;
+}

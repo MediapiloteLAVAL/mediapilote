@@ -1,0 +1,203 @@
+/**
+ * Style du bloc Entête Hero (Frontend et Editor)
+ * 
+ * @package MediaPilote
+ * @since 1.0.0
+ */
+
+.wp-block-mediapilote-entete.hero-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-banner__slider {
+    position: relative;
+    width: 100%;
+    height: 1080px;
+}
+
+.hero-banner__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1080px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.hero-banner__container--current {
+    z-index: 1;
+}
+
+.hero-banner__container--next {
+    opacity: 0;
+    z-index: 2;
+}
+
+/* Overlay sombre avec dégradé */
+.hero-banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(128, 128, 128, 0.92) 91.882%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+/* Contenu principal */
+.hero-banner__content {
+    position: relative;
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 437px 140px 0;
+    z-index: 2;
+}
+
+/* Lignes décoratives (navigation slider) */
+.hero-banner__decorative-lines {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 31px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.hero-banner__line {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 60px;
+    height: 4px;
+}
+
+.hero-banner__line.is-active {
+    background-color: #ffffff;
+}
+
+.hero-banner__line:hover {
+    background-color: #ffffff;
+}
+
+/* Contenu texte */
+.hero-banner__text-content {
+    max-width: 1200px;
+}
+
+/* Titre H1 */
+.hero-banner__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 94px;
+    line-height: 113px;
+    color: #ffffff;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.16);
+    margin: 0 0 30px;
+    white-space: pre-wrap;
+}
+
+/* Description */
+.hero-banner__description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    max-width: 971px;
+    margin: 0 0 40px;
+}
+
+
+
+/* Responsive */
+@media (max-width: 1920px) {
+    .hero-banner__content {
+        padding: 437px 7.3vw 0;
+    }
+}
+
+@media (max-width: 1200px) {
+
+
+    .hero-banner__content {
+        padding: 100px;
+        /* padding: 200px 40px 0; */
+    }
+
+    .hero-banner__title {
+        font-size: 64px;
+        line-height: 80px;
+    }
+
+    .hero-banner__description {
+        font-size: 24px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    /* .hero-banner__content {
+        padding: 120px 20px 0;
+    } */
+
+    .hero-banner__decorative-lines {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .hero-banner__line--main {
+        width: 150px;
+        height: 12px;
+    }
+
+    .hero-banner__line--secondary,
+    .hero-banner__line--tertiary {
+        width: 150px;
+        height: 2px;
+        margin-top: 10px;
+    }
+
+    .hero-banner__title {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .hero-banner__description {
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        width: 220px;
+        height: 48px;
+    }
+
+    .btn-text {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}

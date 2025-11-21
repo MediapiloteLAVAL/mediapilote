@@ -1,0 +1,154 @@
+/**
+ * Style du Bloc Contact - Éditeur Gutenberg
+ * Preview strictement identique au frontend
+ */
+
+/* Styles complets du wrapper identiques au frontend */
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-section__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Colonne gauche */
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-section__left {
+    order: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Colonne droite */
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-section__right {
+    order: 2;
+    flex: 1;
+    max-width: 536px;
+}
+
+/* Styles du formulaire identiques au frontend */
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__field {
+    position: relative;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__input,
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__textarea {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 28px;
+    line-height: 37px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid currentColor;
+    color: currentColor;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__input::placeholder,
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__textarea::placeholder {
+    color: currentColor;
+    opacity: 0.6;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__field--large {
+    margin-top: 20px;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #E0E648;
+    transition: width 0.3s ease;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .btn--contact {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 20px;
+    line-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: transparent;
+    border: 2px solid currentColor;
+    color: currentColor;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 260px;
+    height: 52px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .btn--contact .btn-text {
+    position: relative;
+    z-index: 2;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .btn--contact .btn-arrow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    color: inherit;
+    display: none;
+}
+
+/* Désactiver l'interaction avec le formulaire dans l'éditeur */
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__input,
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-form__textarea,
+.editor-styles-wrapper .wp-block-mediapilote-contact .btn--contact {
+    pointer-events: none;
+}
+
+/* Placeholder pour image vide uniquement dans l'éditeur */
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-section__image:empty {
+    background-color: #f0f0f0;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-contact .contact-section__image:empty::before {
+    content: 'Cliquez pour ajouter une image';
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+}

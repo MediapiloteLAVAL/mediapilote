@@ -1,0 +1,133 @@
+/**
+ * Styles pour le bloc Texte en Colonnes
+ * Frontend et éditeur
+ */
+
+/* Conteneur principal du bloc */
+.mp-texte-colonnes {
+    padding: 60px 0;
+    width: 100%;
+    min-height: 200px;
+}
+
+.mp-texte-colonnes.alignfull {
+    margin-left: calc(-100vw / 2 + 100% / 2);
+    margin-right: calc(-100vw / 2 + 100% / 2);
+    max-width: 100vw;
+    width: 100vw;
+}
+
+/* Conteneur interne avec largeur max */
+.mp-texte-colonnes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Titre du bloc */
+.mp-texte-colonnes-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 37px;
+    margin: 0 0 40px 0;
+    padding: 0;
+    color: #e0e648;
+}
+
+/* Conteneur des colonnes */
+.mp-texte-colonnes-content {
+    display: grid;
+    align-items: start;
+    gap: 60px;
+}
+
+/* Grille pour 1 colonne */
+.mp-texte-columns-1 .mp-texte-colonnes-content {
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+/* Grille pour 2 colonnes */
+.mp-texte-columns-2 .mp-texte-colonnes-content {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Grille pour 3 colonnes */
+.mp-texte-columns-3 .mp-texte-colonnes-content {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Style des colonnes individuelles */
+.mp-texte-colonne {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #0a3c33;
+}
+
+.mp-texte-colonne p {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.mp-texte-colonne p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsivité */
+@media (max-width: 1024px) {
+    .mp-texte-colonnes-container {
+        padding: 0 40px;
+    }
+    
+    .mp-texte-colonnes-content {
+        gap: 40px;
+    }
+    
+    /* Sur tablette, 3 colonnes deviennent 2 colonnes */
+    .mp-texte-columns-3 .mp-texte-colonnes-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* La 3ème colonne prend toute la largeur */
+    .mp-texte-columns-3 .mp-texte-colonne:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .mp-texte-colonnes {
+        padding: 40px 0;
+    }
+    
+    .mp-texte-colonnes-container {
+        padding: 0 20px;
+    }
+    
+    .mp-texte-colonnes-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .mp-texte-colonnes-content {
+        gap: 30px;
+    }
+    
+    .mp-texte-colonne {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    /* Sur mobile, toutes les colonnes deviennent 1 colonne */
+    .mp-texte-columns-2 .mp-texte-colonnes-content,
+    .mp-texte-columns-3 .mp-texte-colonnes-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .mp-texte-columns-3 .mp-texte-colonne:nth-child(3) {
+        grid-column: auto;
+    }
+}

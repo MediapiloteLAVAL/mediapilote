@@ -1,0 +1,173 @@
+/**
+ * Style du bloc Bannière (Frontend)
+ *
+ * @package MediaPilote
+ * @since 1.0.0
+ */
+
+.wp-block-mediapilote-banniere.banniere-section {
+    width: 100%;
+    min-height: 564px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banniere-section__overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+}
+
+.banniere-section .container-fluid {
+    position: relative;
+    z-index: 2;
+}
+
+.banniere-section__content {
+    max-width: 885px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.banniere-section__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: normal;
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+/* Métadonnées pour les posts news */
+.banniere-news-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.banniere-news-meta .news-date,
+.banniere-news-meta .news-category {
+    display: inline-block;
+}
+
+.banniere-news-meta .news-separator {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.banniere-news-meta .news-category {
+    font-weight: 500;
+}
+
+.banniere-section__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+.banniere-section__description p {
+    margin-bottom: 10px;
+}
+
+.banniere-section__description p:last-child {
+    margin-bottom: 0;
+}
+
+.banniere-section .btn {
+    margin-top: 20px;
+}
+
+/* Styles responsifs */
+@media (max-width: 1200px) {
+    .banniere-section__title {
+        font-size: 60px;
+    }
+
+    .banniere-section__content {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banniere-section__title {
+        font-size: 50px;
+    }
+
+    .banniere-section__description {
+        font-size: 22px;
+    }
+
+    .banniere-section__content {
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banniere-section {
+        min-height: 450px;
+    }
+
+    .banniere-section__title {
+        font-size: 40px;
+    }
+
+    .banniere-section__description {
+        font-size: 20px;
+    }
+
+    .banniere-section__content {
+        padding: 60px 20px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .banniere-section {
+        min-height: 400px;
+    }
+
+    .banniere-section__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .banniere-news-meta {
+        font-size: 14px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .banniere-section__description {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .banniere-section__content {
+        padding: 40px 15px;
+    }
+
+    .banniere-section .btn {
+        width: 220px;
+        height: 48px;
+    }
+
+    .banniere-section .btn-text {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,38 @@
+/**
+ * Style du bloc CTA (Frontend)
+ *
+ * @package MediaPilote
+ * @since 1.0.0
+ */
+
+.wp-block-mediapilote-cta.cta-section {
+    width: 100%;
+}
+
+.cta-section__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-section__title {
+    font-size: 50px;
+    line-height: normal;
+    margin-bottom: 30px;
+    font-weight: 500 !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cta-section__description {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cta-section__description p {
+    margin-bottom: 10px;
+}
+
+.cta-section__description p:last-child {
+    margin-bottom: 0;
+}

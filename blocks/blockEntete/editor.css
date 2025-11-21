@@ -1,0 +1,67 @@
+/**
+ * Style du bloc Entête Hero dans l'éditeur Gutenberg
+ * 
+ * @package MediaPilote
+ * @since 1.0.0
+ */
+
+/* Style spécifique pour l'éditeur */
+.wp-block-mediapilote-entete.hero-banner {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-entete.hero-banner {
+    max-width: none;
+}
+
+/* Améliorer la visibilité dans l'éditeur */
+.editor-styles-wrapper .hero-banner__container {
+    min-height: 600px;
+}
+
+/* Rendre les champs éditables plus visibles */
+.editor-styles-wrapper .hero-banner__title[contenteditable="true"],
+.editor-styles-wrapper .hero-banner__description[contenteditable="true"] {
+    outline: none;
+    position: relative;
+}
+
+.editor-styles-wrapper .hero-banner__title[contenteditable="true"]:focus,
+.editor-styles-wrapper .hero-banner__description[contenteditable="true"]:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+.editor-styles-wrapper .hero-banner__title[contenteditable="true"]:empty:before,
+.editor-styles-wrapper .hero-banner__description[contenteditable="true"]:empty:before {
+    content: attr(placeholder);
+    opacity: 0.6;
+}
+
+/* Affichage du bouton dans l'éditeur */
+.editor-styles-wrapper .hero-banner__button {
+    pointer-events: none;
+}
+
+/* Ajuster l'overlay pour mieux voir dans l'éditeur */
+.editor-styles-wrapper .hero-banner__overlay {
+    opacity: 0.9;
+}
+
+/* Message pour l'image de fond manquante */
+.editor-styles-wrapper .hero-banner__container:not([style*="background-image"])::after {
+    content: 'Cliquez sur "Choisir une image" dans la barre latérale pour ajouter une image de fond';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    z-index: 10;
+    max-width: 80%;
+}
