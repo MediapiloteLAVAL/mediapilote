@@ -10,18 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Crée un dossier mediapilote et y copie tous les fichiers du thème
       - name: Préparer le dossier mediapilote
         run: |
           mkdir mediapilote
-          shopt -s extglob
-          cp -r !(mediapilote|.git|.github) mediapilote/
+          rsync -av --exclude=mediapilote --exclude=.git --exclude=.github ./ mediapilote/
 
-      # Crée le zip avec le bon dossier à la racine
       - name: Créer l'archive zip
         run: zip -r mediapilote.zip mediapilote
 
-      # Ajoute le zip à la release GitHub
       - name: Ajouter le zip à la release
         uses: softprops/action-gh-release@v1
         with:
