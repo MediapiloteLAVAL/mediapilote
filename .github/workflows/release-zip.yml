@@ -1,0 +1,27 @@
+name: Build Theme Zip
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Créer un dossier mediapilote et y copier les fichiers du thème
+        run: |
+          mkdir mediapilote
+          shopt -s extglob
+          cp -r !(mediapilote) mediapilote/
+      
+      - name: Créer l'archive zip
+        run: zip -r mediapilote.zip mediapilote
+
+      - name: Ajouter le zip à la release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: mediapilote.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

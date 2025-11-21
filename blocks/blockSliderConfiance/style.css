@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Bloc Slider Confiance - Styles Frontend
+   ========================================================================== */
+
+.wp-block-mediapilote-slider-confiance {
+    position: relative;
+    width: 100%;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.wp-block-mediapilote-slider-confiance .slider-confiance-section__wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.slider-confiance-container {
+    position: relative;
+    width: 100%;
+}
+
+.slider-confiance-content {
+    position: relative;
+    width: 100%;
+}
+
+/* Titre */
+.slider-confiance-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+    color: #2d3037;
+    max-width: 950px;
+}
+
+/* Description */
+.slider-confiance-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 800px;
+}
+
+/* Container du slider avec navigation */
+.slider-confiance-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Navigation à gauche */
+.slider-confiance-navigation {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    padding-top: 50px; /* Aligner avec les items du slider */
+}
+
+.slider-confiance-prev,
+.slider-confiance-next {
+    background: #2d3037;
+    border: none;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.slider-confiance-prev:hover,
+.slider-confiance-next:hover {
+    background: #1a1c1f;
+    transform: translateY(-2px);
+}
+
+.slider-confiance-prev svg,
+.slider-confiance-next svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Container du swiper - aligné à droite */
+.slider-confiance-swiper {
+    flex: 1;
+    max-width: calc(100% - 92px); /* Laisser l'espace pour la navigation */
+    margin-left: auto; /* Pousser le slider vers la droite */
+}
+
+/* Items du slider */
+.slider-confiance-item {
+    background: transparent;
+    width: 398px;
+    height: 178px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slider-confiance-image,
+.slider-confiance-image-placeholder {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.slider-confiance-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.slider-confiance-image-placeholder svg {
+    width: 60px;
+    height: 60px;
+}
+
+.slider-confiance-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: inherit;
+    line-height: 1.3;
+}
+
+.slider-confiance-item-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+    color: inherit;
+    opacity: 0.8;
+}
+
+/* Configuration Swiper */
+.slider-confiance-swiper .swiper-slide {
+    width: 398px !important;
+    flex-shrink: 0;
+}
+
+.slider-confiance-swiper .swiper-wrapper {
+    align-items: flex-start;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .slider-confiance-title {
+        font-size: 50px;
+    }
+    
+    .slider-confiance-wrapper {
+        gap: 30px;
+    }
+    
+    .slider-confiance-item {
+        width: 320px;
+        height: 160px;
+    }
+    
+    .slider-confiance-swiper .swiper-slide {
+        width: 320px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .wp-block-mediapilote-slider-confiance .slider-confiance-section__wrapper {
+        padding: 0 20px;
+    }
+    
+    .slider-confiance-title {
+        font-size: 36px;
+    }
+    
+    .slider-confiance-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .slider-confiance-navigation {
+        justify-content: center;
+        padding-top: 0;
+        order: 2; /* Mettre la navigation en bas sur mobile */
+    }
+    
+    .slider-confiance-swiper {
+        max-width: 100%;
+        margin-left: 0;
+        order: 1;
+    }
+    
+    .slider-confiance-item {
+        width: 280px;
+        height: 150px;
+        padding: 15px;
+    }
+    
+    .slider-confiance-swiper .swiper-slide {
+        width: 280px !important;
+    }
+    
+    .slider-confiance-subtitle {
+        font-size: 14px;
+    }
+    
+    .slider-confiance-item-description {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wp-block-mediapilote-slider-confiance {
+        padding: 40px 0;
+    }
+    
+    .slider-confiance-title {
+        font-size: 28px;
+    }
+    
+    .slider-confiance-description {
+        font-size: 16px;
+    }
+    
+    .slider-confiance-item {
+        width: 250px;
+        height: 140px;
+    }
+    
+    .slider-confiance-swiper .swiper-slide {
+        width: 250px !important;
+    }
+}

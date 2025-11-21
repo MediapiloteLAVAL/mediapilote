@@ -1,0 +1,114 @@
+/**
+ * Styles pour l'éditeur du bloc Texte en Colonnes
+ * Assure une preview identique au frontend
+ */
+
+/* Styles de l'éditeur pour correspondre au frontend */
+.wp-block-mediapilote-texte-colonnes {
+    margin: 20px 0;
+}
+
+.wp-block-mediapilote-texte-colonnes .mp-texte-colonnes {
+    position: relative;
+}
+
+/* Assurer que les styles du titre correspondent dans l'éditeur */
+.wp-block-mediapilote-texte-colonnes .mp-texte-colonnes-title,
+.wp-block-mediapilote-texte-colonnes .components-text-control__input {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    line-height: 37px !important;
+    margin: 0 0 40px 0 !important;
+    padding: 0 !important;
+}
+
+/* Styles pour les TextareaControl dans l'éditeur */
+.wp-block-mediapilote-texte-colonnes .components-textarea-control__input,
+.wp-block-mediapilote-texte-colonnes .mp-texte-colonne textarea {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    border: 1px dashed #ccc !important;
+    padding: 10px !important;
+    min-height: 84px !important;
+    resize: none !important;
+    background: transparent !important;
+    border-radius: 4px;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.wp-block-mediapilote-texte-colonnes .components-textarea-control__input:focus {
+    border-color: #007cba !important;
+    box-shadow: 0 0 0 1px #007cba !important;
+}
+
+/* Placeholder styles */
+.wp-block-mediapilote-texte-colonnes .components-textarea-control__input::placeholder,
+.wp-block-mediapilote-texte-colonnes .components-text-control__input::placeholder {
+    color: #757575;
+    opacity: 0.7;
+}
+
+/* Assurer que l'éditeur respecte les même marges */
+.wp-block-mediapilote-texte-colonnes .mp-texte-colonnes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Styles pour les contrôles d'inspection */
+.wp-block-mediapilote-texte-colonnes .components-panel__body-title {
+    font-weight: 600;
+}
+
+/* Styles pour le RangeControl */
+.wp-block-mediapilote-texte-colonnes .components-range-control__wrapper {
+    margin: 16px 0;
+}
+
+/* Couleurs personnalisées dans l'éditeur */
+.wp-block-mediapilote-texte-colonnes .components-color-palette__item {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 8px 8px 0;
+}
+
+/* Responsive dans l'éditeur */
+@media (max-width: 782px) {
+    .wp-block-mediapilote-texte-colonnes .mp-texte-colonnes-container {
+        padding: 0 15px;
+    }
+    
+    .wp-block-mediapilote-texte-colonnes .mp-texte-colonnes-title,
+    .wp-block-mediapilote-texte-colonnes .components-text-control__input {
+        font-size: 24px !important;
+        line-height: 32px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .wp-block-mediapilote-texte-colonnes .components-textarea-control__input {
+        font-size: 18px !important;
+        line-height: 26px !important;
+    }
+}
+
+/* Indicateur visuel pour l'état vide */
+.wp-block-mediapilote-texte-colonnes .components-textarea-control__input:placeholder-shown {
+    background-image: linear-gradient(135deg, transparent 24%, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.05) 75%, rgba(0, 0, 0, 0.05) 76%, transparent 77%);
+    background-size: 20px 20px;
+}
+
+/* Améliorer l'apparence des contrôles de couleur */
+.wp-block-mediapilote-texte-colonnes .components-color-palette__custom-color {
+    border-radius: 50%;
+}
+
+.wp-block-mediapilote-texte-colonnes .components-color-palette__clear-color {
+    font-size: 12px;
+    padding: 4px 8px;
+}

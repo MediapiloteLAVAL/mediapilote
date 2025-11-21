@@ -1,0 +1,29 @@
+<?php
+/**
+ * Template Name: Page éditoriale
+
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package mediapilote
+ */
+$titre_alternatif = get_field('titre_alternatif');
+
+ get_header(); ?>
+<main class="mt-50 page-editorial">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <?php the_content(); ?>
+            </div>
+        </div>
+    </div>
+
+</main>
+<?php get_footer(); ?>

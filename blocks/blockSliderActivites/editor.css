@@ -1,0 +1,55 @@
+/* Styles pour l'éditeur du bloc Slider d'Activités */
+
+.block-editor-block-list__layout .wp-block-mediapilote-slider-activites {
+    width: 100%;
+}
+
+.block-editor-block-list__layout .wp-block-mediapilote-slider-activites .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.block-editor-block-list__layout .wp-block-mediapilote-slider-activites h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.block-editor-block-list__layout .wp-block-mediapilote-slider-activites p {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    line-height: 28px;
+}
+
+.block-editor-block-list__layout .wp-block-mediapilote-slider-activites .activites-preview {
+    padding: 40px;
+    border: 2px dashed #ddd;
+    text-align: center;
+    margin: 20px 0;
+    background: rgba(0,0,0,0.05);
+}
+
+.block-editor-block-list__layout .wp-block-mediapilote-slider-activites .activites-button a {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.block-editor-block-list__layout .wp-block-mediapilote-slider-activites .activites-button a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .block-editor-block-list__layout .wp-block-mediapilote-slider-activites h2 {
+        font-size: 40px;
+    }
+}
