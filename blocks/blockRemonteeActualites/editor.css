@@ -1,0 +1,86 @@
+/* Styles pour l'éditeur Gutenberg - Bloc Remontée d'Actualités */
+
+.wp-block-mediapilote-remontee-actualites {
+    border: 1px dashed #ddd;
+    position: relative;
+}
+
+.wp-block-mediapilote-remontee-actualites::before {
+    content: "Bloc Remontée d'Actualités";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background: #2271b1;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 10;
+    border-radius: 0 0 4px 0;
+}
+
+/* Ajustements pour l'aperçu dans l'éditeur */
+.editor-styles-wrapper .wp-block-mediapilote-remontee-actualites {
+    font-family: 'Inter', sans-serif;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .container {
+    max-width: 100%;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .actualites-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .actualites-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .actualite-item-preview {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .actualite-item-preview:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive dans l'éditeur */
+@media (max-width: 781px) {
+    .editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .actualites-title {
+        font-size: 40px !important;
+    }
+    
+    .editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .actualites-description {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+}
+
+/* Note d'aperçu */
+.editor-styles-wrapper .wp-block-mediapilote-remontee-actualites .actualites-preview {
+    position: relative;
+}
+
+/* Styles pour les contrôles de l'inspecteur */
+.components-panel__body .components-base-control__label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.components-textarea-control__input {
+    min-height: 80px;
+}
+
+/* Amélioration de l'affichage des couleurs */
+.components-color-palette {
+    max-width: none;
+}
+
+.components-color-palette__item {
+    margin: 0 4px 4px 0;
+}

@@ -1,0 +1,330 @@
+/**
+ * Styles pour le bloc Chiffres Clés - Frontend
+ *
+ * @package MediaPilote
+ * @since 1.0.0
+ */
+
+.bloc-chiffres-cles {
+  position: relative;
+  overflow: hidden;
+}
+
+.bloc-chiffres-cles .container {
+  max-width: 1140px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bloc-chiffres-cles .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.bloc-chiffres-cles .col-12,
+.bloc-chiffres-cles .col-md-6,
+.bloc-chiffres-cles .col-lg-3,
+.bloc-chiffres-cles .col-lg-4,
+.bloc-chiffres-cles .col-xl-2 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Titre du bloc */
+.bloc-chiffres-cles__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+/* Description du bloc */
+.bloc-chiffres-cles__description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Conteneur d'un élément */
+.bloc-chiffres-cles__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem 1rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bloc-chiffres-cles__item:hover {
+  transform: translateY(-5px);
+}
+
+/* Styles pour les chiffres - Taille adaptative selon le nombre d'éléments */
+.bloc-chiffres-cles__number {
+  font-size: 150px; /* Taille par défaut pour 1-2 éléments */
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: countUpFadeIn 0.8s ease-out forwards;
+}
+
+/* Adaptation de la taille selon le nombre d'éléments */
+/* 3 éléments : taille légèrement réduite */
+.bloc-chiffres-cles .row:has(.col-lg-4:nth-child(3)) .bloc-chiffres-cles__number {
+  font-size: 130px;
+}
+
+/* 4 éléments : taille plus réduite */
+.bloc-chiffres-cles .row:has(.col-lg-3:nth-child(4)) .bloc-chiffres-cles__number {
+  font-size: 110px;
+}
+
+/* 5 éléments : taille minimale */
+.bloc-chiffres-cles .row:has(.col-xl-2:nth-child(5)) .bloc-chiffres-cles__number {
+  font-size: 90px;
+}
+
+/* Fallback pour les navigateurs ne supportant pas :has() */
+.bloc-chiffres-cles[data-items="3"] .bloc-chiffres-cles__number {
+  font-size: 130px;
+}
+
+.bloc-chiffres-cles[data-items="4"] .bloc-chiffres-cles__number {
+  font-size: 110px;
+}
+
+.bloc-chiffres-cles[data-items="5"] .bloc-chiffres-cles__number {
+  font-size: 90px;
+}
+
+/* Styles pour les icônes */
+.bloc-chiffres-cles__icon {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.bloc-chiffres-cles__icon img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.bloc-chiffres-cles__item:hover .bloc-chiffres-cles__icon img {
+  transform: scale(1.1);
+}
+
+/* Labels */
+.bloc-chiffres-cles__label {
+  font-size: 20px;
+  line-height: 1.9;
+  margin: 0;
+  text-align: center;
+  max-width: 308px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+/* Animations */
+@keyframes countUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes utilitaires pour la grille Bootstrap */
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* Responsive Design */
+
+/* Tablettes et plus grand */
+@media (min-width: 768px) {
+  .bloc-chiffres-cles .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Desktop et plus grand */
+@media (min-width: 992px) {
+  .bloc-chiffres-cles .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  
+  .bloc-chiffres-cles .col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .bloc-chiffres-cles .col-xl-2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* Mobile first - ajustements pour petits écrans */
+@media (max-width: 767px) {
+  .bloc-chiffres-cles {
+    padding: 40px 0 !important;
+  }
+  
+  .bloc-chiffres-cles__title {
+    font-size: 2rem;
+  }
+  
+  /* Tailles responsives pour mobile selon le nombre d'éléments */
+  .bloc-chiffres-cles__number {
+    font-size: 100px; /* Défaut pour 1-2 éléments */
+  }
+  
+  .bloc-chiffres-cles .row:has(.col-lg-4:nth-child(3)) .bloc-chiffres-cles__number,
+  .bloc-chiffres-cles[data-items="3"] .bloc-chiffres-cles__number {
+    font-size: 90px;
+  }
+  
+  .bloc-chiffres-cles .row:has(.col-lg-3:nth-child(4)) .bloc-chiffres-cles__number,
+  .bloc-chiffres-cles[data-items="4"] .bloc-chiffres-cles__number {
+    font-size: 80px;
+  }
+  
+  .bloc-chiffres-cles .row:has(.col-xl-2:nth-child(5)) .bloc-chiffres-cles__number,
+  .bloc-chiffres-cles[data-items="5"] .bloc-chiffres-cles__number {
+    font-size: 70px;
+  }
+  
+  .bloc-chiffres-cles__label {
+    font-size: 18px;
+  }
+  
+  .bloc-chiffres-cles__item {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  /* Tailles encore plus réduites pour très petits écrans */
+  .bloc-chiffres-cles__number {
+    font-size: 80px; /* Défaut pour 1-2 éléments */
+  }
+  
+  .bloc-chiffres-cles .row:has(.col-lg-4:nth-child(3)) .bloc-chiffres-cles__number,
+  .bloc-chiffres-cles[data-items="3"] .bloc-chiffres-cles__number {
+    font-size: 70px;
+  }
+  
+  .bloc-chiffres-cles .row:has(.col-lg-3:nth-child(4)) .bloc-chiffres-cles__number,
+  .bloc-chiffres-cles[data-items="4"] .bloc-chiffres-cles__number {
+    font-size: 60px;
+  }
+  
+  .bloc-chiffres-cles .row:has(.col-xl-2:nth-child(5)) .bloc-chiffres-cles__number,
+  .bloc-chiffres-cles[data-items="5"] .bloc-chiffres-cles__number {
+    font-size: 50px;
+  }
+  
+  .bloc-chiffres-cles__title {
+    font-size: 1.75rem;
+  }
+  
+  .bloc-chiffres-cles__label {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+/* Classes d'animation pour l'effet de compteur */
+.bloc-chiffres-cles__number.counting {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Amélioration de l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .bloc-chiffres-cles__item,
+  .bloc-chiffres-cles__number,
+  .bloc-chiffres-cles__icon,
+  .bloc-chiffres-cles__label {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .bloc-chiffres-cles__item:hover {
+    transform: none;
+  }
+  
+  .bloc-chiffres-cles__item:hover .bloc-chiffres-cles__icon img {
+    transform: none;
+  }
+}
+
+/* Styles pour le mode sombre (si nécessaire) */
+.bloc-chiffres-cles[style*="background-color: #"] .bloc-chiffres-cles__title,
+.bloc-chiffres-cles[style*="background-color: #"] .bloc-chiffres-cles__description,
+.bloc-chiffres-cles[style*="background-color: #"] .bloc-chiffres-cles__number,
+.bloc-chiffres-cles[style*="background-color: #"] .bloc-chiffres-cles__label {
+  color: inherit;
+}
+
+/* Support pour l'alignement full-width */
+.alignfull {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-100vw / 2 + 100% / 2);
+  margin-right: calc(-100vw / 2 + 100% / 2);
+}

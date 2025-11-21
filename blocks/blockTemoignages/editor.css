@@ -1,0 +1,17 @@
+/* Styles pour l'éditeur du bloc Témoignages */
+.wp-block-mediapilote-temoignages {
+    border: 1px solid #ddd;
+}
+
+.testimonial-separator {
+    border: none;
+    width: 40%;
+    height: 1px;
+    background-color: #2d3037;
+    margin: 10px 0 40px;
+}
+
+.wp-block-mediapilote-temoignages .swiper-pagination {
+    position: relative !important;
+    margin-top: 50px;
+}

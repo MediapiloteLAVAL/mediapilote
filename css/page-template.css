@@ -1,0 +1,335 @@
+/**
+ * Styles CSS pour le template de page générique
+ * 
+ * Ce fichier contient tous les styles nécessaires pour le template page-template.php
+ * Inclure ce fichier dans votre functions.php ou l'importer dans votre CSS principal
+ */
+
+/* ===== BANNIÈRE DE PAGE ===== */
+.page-banner {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.page-banner .banner-image {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+}
+
+.page-banner .banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page-banner .banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.page-banner .banner-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-banner .banner-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== HEADER DE PAGE ===== */
+.page-header {
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 1rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+/* ===== BREADCRUMBS ===== */
+.breadcrumb-nav {
+    margin-bottom: 2rem;
+}
+
+.breadcrumb {
+    background: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item {
+    font-size: 0.9rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d;
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* ===== CONTENU DE LA PAGE ===== */
+.page-content {
+    line-height: 1.6;
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.page-content h1 {
+    font-size: 2.2rem;
+}
+
+.page-content h2 {
+    font-size: 1.9rem;
+}
+
+.page-content h3 {
+    font-size: 1.6rem;
+}
+
+.page-content p {
+    margin-bottom: 1rem;
+}
+
+.page-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.page-content ul,
+.page-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.page-content li {
+    margin-bottom: 0.25rem;
+}
+
+/* ===== PAGINATION ===== */
+.page-links {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.page-links .page-number {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.page-links .page-number:hover {
+    background: #e9ecef;
+    color: #0056b3;
+}
+
+/* ===== SIDEBAR ===== */
+.page-sidebar {
+    padding-left: 2rem;
+}
+
+.page-sidebar .widget {
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.page-sidebar .widget-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+.page-sidebar .widget p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.page-sidebar .widget ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.page-sidebar .widget li {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.page-sidebar .widget li:last-child {
+    border-bottom: none;
+}
+
+.page-sidebar .widget a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.page-sidebar .widget a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* ===== MESSAGE SANS CONTENU ===== */
+.no-content {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    border: 1px solid #e9ecef;
+}
+
+.no-content p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* ===== CLASSES CONDITIONNELLES ===== */
+.has-sidebar .page-content {
+    padding-right: 1rem;
+}
+
+.has-banner .page-header {
+    display: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991.98px) {
+    .page-banner .banner-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-banner .banner-subtitle {
+        font-size: 1rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-sidebar {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .has-sidebar .page-content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-banner {
+        margin-bottom: 1rem;
+    }
+    
+    .page-banner .banner-image {
+        min-height: 200px;
+    }
+    
+    .page-banner .banner-title {
+        font-size: 1.8rem;
+    }
+    
+    .page-banner .banner-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .page-title {
+        font-size: 1.7rem;
+    }
+    
+    .breadcrumb {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .breadcrumb-item {
+        font-size: 0.8rem;
+    }
+    
+    .page-sidebar .widget {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .page-banner .banner-title {
+        font-size: 1.5rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .page-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .page-content h3 {
+        font-size: 1.3rem;
+    }
+}

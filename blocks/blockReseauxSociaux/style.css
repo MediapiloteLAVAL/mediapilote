@@ -1,0 +1,127 @@
+/* Style CSS pour le bloc Réseaux Sociaux */
+.wp-block-mediapilote-reseaux-sociaux {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: relative;
+}
+
+.reseaux-sociaux-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.reseaux-sociaux-section__content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Structure de la grille des réseaux sociaux */
+.social-network-grid {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur des icônes */
+.social-network-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+/* Items individuels des réseaux sociaux */
+.social-network-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-right: none; /* On enlève la bordure droite pour éviter les doublons */
+}
+
+/* Le dernier élément garde sa bordure droite */
+.social-network-item:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Premier élément avec bordure arrondie à gauche */
+.social-network-item:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/* Dernier élément avec bordure arrondie à droite */
+.social-network-item:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.social-network-link {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.social-network-link:hover {
+    transform: scale(1.1);
+}
+
+.social-network-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Rend les icônes blanches */
+    transition: all 0.3s ease;
+}
+
+.social-network-link:hover .social-network-icon {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.social-network-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Style pour le message d'absence de réseaux sociaux */
+.social-networks-empty {
+    text-align: center;
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.social-networks-empty p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-network-grid {
+        transform: scale(0.8);
+    }
+    
+    .social-network-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-network-grid {
+        transform: scale(0.6);
+    }
+    
+    .social-network-icons {
+        gap: 20px;
+    }
+    
+    .social-network-icon {
+        width: 30px;
+        height: 30px;
+    }
+}

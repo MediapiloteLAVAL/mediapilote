@@ -1,0 +1,39 @@
+/* Styles pour le bloc Carte */
+.wp-block-mediapilote-carte {
+    width: 100%;
+}
+
+.wp-block-mediapilote-carte div[id^="carte-"] {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les popups de la carte */
+.carte-popup {
+    max-width: 350px;
+    font-family: inherit;
+    line-height: 1.2;
+}
+
+.carte-popup h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.carte-popup p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.carte-popup a {
+    color: #007cba;
+    text-decoration: none;
+}
+
+.carte-popup a:hover {
+    text-decoration: underline;
+}
