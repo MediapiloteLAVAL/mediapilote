@@ -13,14 +13,21 @@ jobs:
       - name: Préparer le dossier mediapilote
         run: |
           mkdir mediapilote
-          rsync -av --exclude=mediapilote --exclude=.git --exclude=.github ./ mediapilote/
+          shopt -s dotglob
+          cp -r !(mediapilote|.git|.github) mediapilote/
+
+      - name: Vérifier le contenu du dossier
+        run: ls -la mediapilote
 
       - name: Créer l'archive zip
         run: zip -r mediapilote.zip mediapilote
 
+      - name: Vérifier le contenu du zip
+        run: unzip -l mediapilote.zip
+
       - name: Ajouter le zip à la release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: mediapilote.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}
