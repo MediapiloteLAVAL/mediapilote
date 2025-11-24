@@ -13,8 +13,7 @@ jobs:
       - name: Préparer le dossier mediapilote
         run: |
           mkdir mediapilote
-          shopt -s dotglob
-          cp -r !(mediapilote|.git|.github) mediapilote/
+          rsync -av --exclude=mediapilote --exclude=.git --exclude=.github ./ mediapilote/
 
       - name: Vérifier le contenu du dossier
         run: ls -la mediapilote
