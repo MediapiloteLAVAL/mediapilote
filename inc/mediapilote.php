@@ -1732,7 +1732,7 @@ function mediapilote_github_theme_updater() {
                 'theme'       => $theme_slug,
                 'new_version' => $new_version,
                 'url'         => $release_data->html_url,
-                'package'     => $release_data->zipball_url, // Pas de token pour dépôt public
+                'package'     => "https://github.com/MediapiloteLAVAL/mediapilote/releases/download/{$release_data->tag_name}/mediapilote.zip",
             );
         }
         
