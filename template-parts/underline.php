@@ -1,0 +1,5 @@
+<div class="underline">
+    <svg width="524" height="1" viewBox="0 0 524 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0.5H524" stroke="#1D1D1B"/>
+    </svg>
+</div>

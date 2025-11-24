@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Bloc Slider Confiance - Styles Éditeur Gutenberg
+   ========================================================================== */
+
+.wp-block-mediapilote-slider-confiance {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+}
+
+.editor-styles-wrapper .wp-block-mediapilote-slider-confiance {
+    padding: 40px 20px;
+}
+
+.wp-block-mediapilote-slider-confiance .slider-confiance-section__wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.slider-confiance-section__wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.slider-confiance-container {
+    position: relative;
+    width: 100%;
+}
+
+.slider-confiance-content {
+    position: relative;
+    width: 100%;
+}
+
+/* Titre dans l'éditeur */
+.editor-styles-wrapper .slider-confiance-title {
+    font-size: 48px !important;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+/* Description dans l'éditeur */
+.editor-styles-wrapper .slider-confiance-description {
+    font-size: 16px !important;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    opacity: 0.8;
+}
+
+/* Preview dans l'éditeur */
+.slider-confiance-preview {
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.slider-confiance-preview p {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #666;
+}
+
+.slider-confiance-preview > div {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.slider-confiance-preview > div > div {
+    width: 250px;
+    min-height: 120px;
+    padding: 15px;
+    border: none!important;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.slider-confiance-preview img {
+    max-width: 100%!important;
+    height: auto!important;
+    max-height: 80px!important;
+    object-fit: contain!important;
+    margin-bottom: 10px!important;
+    align-self: center!important;
+}
+
+.slider-confiance-preview h3 {
+    font-size: 16px !important;
+    margin: 0 0 8px 0 !important;
+    font-weight: 600;
+}
+
+.slider-confiance-preview p {
+    font-size: 12px !important;
+    margin: 0 !important;
+    opacity: 0.9;
+    font-style: normal;
+}
+
+/* Styles pour les contrôles d'items dans le sidebar */
+.slider-item-control {
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.slider-item-control .components-base-control__label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.slider-item-control img {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.slider-item-control .components-button.is-destructive {
+    font-size: 12px;
+}
+
+/* Responsive pour l'éditeur */
+@media (max-width: 768px) {
+    .wp-block-mediapilote-slider-confiance .slider-confiance-section__wrapper {
+        padding: 0 20px;
+    }
+    
+    .slider-confiance-section__wrapper {
+        padding: 0 20px;
+    }
+
+    .editor-styles-wrapper .slider-confiance-title {
+        font-size: 32px !important;
+    }
+    
+    .slider-confiance-preview > div {
+        gap: 10px;
+    }
+    
+    .slider-confiance-preview > div > div {
+        width: 200px;
+        min-height: 100px;
+        padding: 12px;
+    }
+}
+
+/* Améliorer la visibilité dans l'éditeur */
+.wp-block-mediapilote-slider-confiance::before {
+    content: "Slider Confiance";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #0073aa;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    z-index: 1;
+}

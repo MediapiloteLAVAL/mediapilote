@@ -1,0 +1,5 @@
+/* Styles pour l'éditeur du bloc Carte */
+.wp-block-mediapilote-carte {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

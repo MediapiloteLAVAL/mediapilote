@@ -1,0 +1,177 @@
+/**
+ * Style du bloc Bannière (Éditeur)
+ *
+ * @package MediaPilote
+ * @since 1.0.0
+ */
+
+/* Styles de base identiques au frontend */
+.wp-block-mediapilote-banniere.banniere-section {
+    width: 100%;
+    min-height: 564px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wp-block-mediapilote-banniere .banniere-section__overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+}
+
+.wp-block-mediapilote-banniere .container-fluid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.wp-block-mediapilote-banniere .banniere-section__content {
+    max-width: 885px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.wp-block-mediapilote-banniere .banniere-section__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: normal;
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+.wp-block-mediapilote-banniere .banniere-section__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+.wp-block-mediapilote-banniere .banniere-section__description p {
+    margin-bottom: 10px;
+}
+
+.wp-block-mediapilote-banniere .banniere-section__description p:last-child {
+    margin-bottom: 0;
+}
+
+.wp-block-mediapilote-banniere .btn {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 52px;
+    background-color: transparent;
+    border: 3px solid currentColor;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-block-mediapilote-banniere .btn-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 60px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* Styles spécifiques à l'éditeur */
+.wp-block-mediapilote-banniere {
+    margin: 0 !important;
+}
+
+/* Ajustements pour l'éditeur Gutenberg */
+.editor-styles-wrapper .wp-block-mediapilote-banniere {
+    max-width: none !important;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+/* Styles responsifs pour l'éditeur */
+@media (max-width: 1200px) {
+    .wp-block-mediapilote-banniere .banniere-section__title {
+        font-size: 60px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__content {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 992px) {
+    .wp-block-mediapilote-banniere .banniere-section__title {
+        font-size: 50px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__description {
+        font-size: 22px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__content {
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wp-block-mediapilote-banniere {
+        min-height: 450px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__title {
+        font-size: 40px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__description {
+        font-size: 20px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__content {
+        padding: 60px 20px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .wp-block-mediapilote-banniere {
+        min-height: 400px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__description {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .wp-block-mediapilote-banniere .banniere-section__content {
+        padding: 40px 15px;
+    }
+    
+    .wp-block-mediapilote-banniere .btn {
+        width: 220px;
+        height: 48px;
+    }
+    
+    .wp-block-mediapilote-banniere .btn-text {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,261 @@
+/*************************************/
+/*************************************/
+/*************************************/
+/* Classe responsive */
+/*************************************/
+/*************************************/
+/*************************************/
+
+function updateResponsiveClass() {
+  if (window.innerWidth < 1000) {
+    jQuery("body").addClass("responsive");
+  } else {
+    jQuery("body").removeClass("responsive");
+  }
+}
+
+// Initialiser la classe responsive au chargement de la page
+jQuery(document).ready(function ($) {
+  updateResponsiveClass();
+
+  // Ajouter un écouteur d'événement pour le redimensionnement de la fenêtre
+  jQuery(window).on("resize", function () {
+    updateResponsiveClass();
+  });
+});
+/*************************************/
+/*************************************/
+/*************************************/
+/* Nouvel onglet pour les liens externes */
+/*************************************/
+/*************************************/
+/*************************************/
+
+function targetBlank() {
+  let internal = location.host.replace("www.", "");
+  internal = new RegExp(internal, "i");
+  let a = document.getElementsByTagName("a");
+  let links = document.querySelectorAll("body a");
+  links.forEach((link) => {
+    let linkHref = link.getAttribute("href");
+    if (linkHref && linkHref.indexOf(".pdf") != -1) {
+      link.setAttribute("target", "_blank");
+    }
+    if (link.hostname != location.hostname) {
+      a.rel = "noopener";
+      a.target = "_blank";
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+    }
+  });
+}
+targetBlank();
+
+
+
+
+//************************************************************//
+//************************************************************//
+//************************************************************//
+//************************************************************//
+//______________Retour en haut de page_______________//
+//************************************************************//
+//************************************************************//
+//************************************************************//
+//************************************************************//
+
+// document.querySelector('.back-to-top').addEventListener('click', function() {
+//   window.scrollTo({
+//       top: 0,
+//       behavior: 'smooth'
+//   });
+// });
+
+//************************************************************//
+
+//************************************************************//
+//************************************************************//
+//************************************************************//
+//************************************************************//
+//______________Hauteur fixe pour tous les sous-menus_______________//
+//************************************************************//
+//************************************************************//
+//************************************************************//
+//************************************************************//
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Sélectionnez toutes les balises avec la classe .sub-menu dans .menu-responsive
+//   var subMenus = document.querySelectorAll('.menu-responsive .sub-menu');
+
+//   // Parcourez chaque sous-menu
+//   subMenus.forEach(function(subMenu) {
+//       // Calculer la hauteur du sous-menu
+//       var subMenuHeight = subMenu.scrollHeight;
+
+//       // Appliquer la hauteur en tant que style CSS inline
+//       subMenu.style.height = subMenuHeight + 'px';
+//   });
+// });
+
+/*************************************/
+/*************************************/
+/*************************************/
+/* Espacer les numéros de tel */
+/*************************************/
+/*************************************/
+/*************************************/
+
+document.addEventListener("DOMContentLoaded", function () {
+  const telephoneElements = document.querySelectorAll(".telephone");
+
+  telephoneElements.forEach(function (element) {
+    const originalText = element.textContent;
+    const formattedText = originalText.replace(/(\d{2})(?=\d)/g, "$1 ");
+    element.textContent = formattedText;
+  });
+});
+
+
+// Ajouter des wrappers aux sous-menus
+function addSubmenuWrappers() {
+  const subMenus = document.querySelectorAll('.header-left-menu .sub-menu');
+  
+  subMenus.forEach(function(subMenu) {
+      // Vérifier si le wrapper existe déjà
+      if (!subMenu.querySelector('.submenu-wrapper')) {
+          // Créer le wrapper principal
+          const wrapper = document.createElement('div');
+          wrapper.className = 'submenu-wrapper align80';
+          
+          // Créer le conteneur d'image
+          const imageContainer = document.createElement('div');
+          imageContainer.className = 'submenu-image';
+          
+          // Créer le conteneur des liens
+          const linksContainer = document.createElement('div');
+          linksContainer.className = 'submenu-links';
+          
+          // Déplacer tous les li dans le conteneur des liens
+          const listItems = Array.from(subMenu.children);
+          listItems.forEach(function(li) {
+              linksContainer.appendChild(li);
+          });
+          
+          // Assembler la structure : wrapper > (image + links)
+          wrapper.appendChild(imageContainer);
+          wrapper.appendChild(linksContainer);
+          
+          // Ajouter le wrapper au sous-menu
+          subMenu.appendChild(wrapper);
+        }
+  });
+}
+
+// Appeler la fonction au chargement
+document.addEventListener('DOMContentLoaded', addSubmenuWrappers);
+
+/*************************************/
+/*************************************/
+/*************************************/
+/* Gestionnaire pour PolitiqueConfidentialite */
+/*************************************/
+/*************************************/
+/*************************************/
+
+// Gestionnaire pour ouvrir le panneau Tarteaucitron au clic sur .PolitiqueConfidentialite
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM chargé, recherche des éléments .PolitiqueConfidentialite...');
+    
+    // Attendre que Tarteaucitron soit chargé
+    function waitForTarteaucitron() {
+        console.log('Vérification de Tarteaucitron...', typeof tarteaucitron);
+        
+        if (typeof tarteaucitron !== 'undefined' && tarteaucitron.openPanel) {
+            console.log('Tarteaucitron trouvé !');
+            
+            // Ajouter les gestionnaires d'événements pour tous les éléments .PolitiqueConfidentialite
+            const privacyLinks = document.querySelectorAll('.PolitiqueConfidentialite');
+            console.log('Éléments .PolitiqueConfidentialite trouvés:', privacyLinks.length);
+            
+            privacyLinks.forEach(function(link, index) {
+                console.log('Configuration de l\'élément', index, link);
+                
+                // Gérer le clic sur le li lui-même
+                link.addEventListener('click', function(e) {
+                    console.log('Clic détecté sur le li');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Simuler un clic sur l'icône Tarteaucitron
+                    const tarteaucitronIcon = document.getElementById('tarteaucitronManager');
+                    if (tarteaucitronIcon) {
+                        console.log('Icône Tarteaucitron trouvée, simulation du clic...');
+                        tarteaucitronIcon.click();
+                    } else {
+                        console.log('Icône Tarteaucitron non trouvée, utilisation de openPanel...');
+                        tarteaucitron.openPanel();
+                    }
+                });
+                
+                // Gérer aussi le clic sur le lien à l'intérieur du li
+                const innerLink = link.querySelector('a');
+                if (innerLink) {
+                    console.log('Lien interne trouvé:', innerLink);
+                    innerLink.addEventListener('click', function(e) {
+                        console.log('Clic détecté sur le lien interne');
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Simuler un clic sur l'icône Tarteaucitron
+                        const tarteaucitronIcon = document.getElementById('tarteaucitronManager');
+                        if (tarteaucitronIcon) {
+                            console.log('Icône Tarteaucitron trouvée, simulation du clic...');
+                            tarteaucitronIcon.click();
+                        } else {
+                            console.log('Icône Tarteaucitron non trouvée, utilisation de openPanel...');
+                            tarteaucitron.openPanel();
+                        }
+                    });
+                } else {
+                    console.log('Aucun lien interne trouvé dans l\'élément', link);
+                }
+            });
+        } else {
+            console.log('Tarteaucitron pas encore chargé, nouvelle tentative dans 100ms...');
+            // Si Tarteaucitron n'est pas encore chargé, réessayer dans 100ms
+            setTimeout(waitForTarteaucitron, 100);
+        }
+    }
+    
+    // Démarrer la vérification
+    waitForTarteaucitron();
+});
+
+// Approche alternative avec délégation d'événements
+document.addEventListener('click', function(e) {
+    // Vérifier si le clic est sur un élément avec la classe .PolitiqueConfidentialite
+    // ou sur un de ses enfants
+    const clickedElement = e.target.closest('.PolitiqueConfidentialite');
+    
+    if (clickedElement) {
+        console.log('Clic détecté via délégation sur:', clickedElement);
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Simuler un clic sur l'icône Tarteaucitron
+        const tarteaucitronIcon = document.getElementById('tarteaucitronManager');
+        if (tarteaucitronIcon) {
+            console.log('Icône Tarteaucitron trouvée, simulation du clic...');
+            tarteaucitronIcon.click();
+        } else {
+            console.log('Icône Tarteaucitron non trouvée');
+            // Fallback : essayer d'utiliser la méthode openPanel si disponible
+            if (typeof tarteaucitron !== 'undefined' && tarteaucitron.openPanel) {
+                console.log('Utilisation de la méthode openPanel en fallback...');
+                tarteaucitron.openPanel();
+            } else {
+                console.log('Tarteaucitron non disponible');
+            }
+        }
+    }
+});
